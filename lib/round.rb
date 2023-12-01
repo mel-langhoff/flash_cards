@@ -29,17 +29,18 @@ class Round
     end
 
     def number_correct_by_category(category)
-        number_of_correct_turns = @turns.select do |turn|
+        number_correct_by_category = @turns.select do |turn|
             turn.feedback == "Correct!" && turn.card.category == category
         end
-        number_of_correct_turns.count
+        number_correct_by_category.count
     end
 
-    # def percent_correct
+    def percent_correct
+        (@number_correct.to_f / @turns.count.to_f) * 100
+    end
 
-    # end
-
-    # def percent_correct_by_category(@category)
-
+    def percent_correct_by_category(category)
+        ((number_correct_by_category(category)) / deck.cards_in_category(category).count) * 100
+    end
 
 end
