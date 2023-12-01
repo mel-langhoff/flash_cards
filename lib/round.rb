@@ -1,10 +1,11 @@
 class Round
-    attr_reader :deck, :turns, :number_correct, :category
+    attr_reader :deck, :turns, :number_correct, :category, :card_count
 
     def initialize(deck)
         @deck = deck
         @turns = []
         @category = []
+        @card_count = 0
     end
 
     def current_card
@@ -51,6 +52,9 @@ class Round
 
     def play_card
         
+        current_card_number = @card_count + 1
+        puts "This is card number #{card_number} out of #{deck.cards.count}."
+        puts "Question: #{@current_card.question}"
     end
 
 
