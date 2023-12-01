@@ -55,7 +55,8 @@ class Round
     end
 
     def play_card
-        current_card_number = @card_count + 1
+        @card_count += 1
+        current_card_number = @card_count
         @current_card = deck.cards.first
         puts "This is card number #{current_card_number} out of #{deck.cards.count}."
         puts "Question: #{@current_card.question}"
@@ -63,4 +64,6 @@ class Round
         take_turn(guess)
         puts @turns.last.feedback
     end
+
+
 end
