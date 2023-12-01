@@ -43,4 +43,15 @@ class Round
         ((number_correct_by_category(category)) / deck.cards_in_category(category).count) * 100
     end
 
+    def start
+        puts "Welcome! You're playing with #{deck.cards.count} cards."
+        puts "-------------------------------------------------"
+        play_card
+    end
+
+    def play_card
+        
+    end
+
+
 end
