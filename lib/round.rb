@@ -47,22 +47,20 @@ class Round
     def start
         puts "Welcome! You're playing with #{deck.cards.count} cards."
         puts "-------------------------------------------------"
-        if turns.count == deck.cards.count
+        until turns.count == deck.cards.count
             play_card
-        else
-            puts "***** Game over! ******"
-            puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
         end
+        puts "***** Game over! ******"
+        puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
     end
 
     def play_card
         current_card_number = @card_count + 1
-        puts "This is card number #{card_number} out of #{deck.cards.count}."
+        @current_card = deck.cards.first
+        puts "This is card number #{current_card_number} out of #{deck.cards.count}."
         puts "Question: #{@current_card.question}"
         guess = gets.chomp
         take_turn(guess)
         puts @turns.last.feedback
     end
-
-
 end
