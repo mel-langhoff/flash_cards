@@ -24,7 +24,7 @@ class Round
     end
 
     def number_correct
-        @number_correct = @turns.count do |turn|
+        number_correct = @turns.count do |turn|
             turn.correct?
         end
     end
@@ -37,7 +37,7 @@ class Round
     end
 
     def percent_correct
-        (@number_correct.to_f / @turns.count.to_f) * 100
+        (number_correct.to_f / @turns.count.to_f) * 100
     end
 
     def percent_correct_by_category(category)
@@ -47,14 +47,21 @@ class Round
     def start
         puts "Welcome! You're playing with #{deck.cards.count} cards."
         puts "-------------------------------------------------"
-        play_card
+        if turns.count == deck.cards.count
+            play_card
+        else
+            puts "***** Game over! ******"
+            puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
+        end
     end
 
     def play_card
-        
         current_card_number = @card_count + 1
         puts "This is card number #{card_number} out of #{deck.cards.count}."
         puts "Question: #{@current_card.question}"
+        guess = gets.chomp
+        take_turn(guess)
+        puts @turns.last.feedback
     end
 
 
