@@ -65,5 +65,15 @@ class Round
         puts @turns.last.feedback
     end
 
+    def final_score
+        puts "****** Game over! ******"
+        puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
+        category_correct_breakdown
+    end
+
+    def category_correct_breakdown
+        
+    end
+
 
 end
