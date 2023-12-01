@@ -1,11 +1,12 @@
 class Round
-    attr_reader :deck, :turns, :number_correct, :category, :card_count
+    attr_reader :deck, :turns, :number_correct, :category, :card_count, :turn_category
 
     def initialize(deck)
         @deck = deck
         @turns = []
         @category = []
         @card_count = 0
+        @turn_category = []
     end
 
     def current_card
@@ -68,11 +69,17 @@ class Round
     def final_score
         puts "****** Game over! ******"
         puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
-        category_correct_breakdown
+        category_correct_list
     end
 
-    def category_correct_breakdown
-        
+    def category_correct_list
+        @turn_category.each do |category|
+            puts "#{category} - #{percent_correct_by_category(category)}% correct"
+        end
+    end
+
+    def assign_turn_category
+        @turn_category << 
     end
 
 
