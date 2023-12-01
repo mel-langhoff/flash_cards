@@ -19,7 +19,7 @@ RSpec.describe Turn do
         expect(turn2.correct?).to be false
     end
 
-    xit "#feedback" do
+    it "#feedback" do
         card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
         turn1 = Turn.new("Juneau", card1)
         card2 = card = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
