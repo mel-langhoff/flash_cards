@@ -17,6 +17,7 @@ class Round
         @current_card = @deck.cards.first
         @turns << Turn.new(guess, @current_card)
         @deck.cards.rotate!
+        assign_turn_category
         @turns.last
     end
 
@@ -51,8 +52,7 @@ class Round
         until turns.count == deck.cards.count
             play_card
         end
-        puts "***** Game over! ******"
-        puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
+        final_score
     end
 
     def play_card
@@ -79,8 +79,7 @@ class Round
     end
 
     def assign_turn_category
-        @turn_category << 
+        @turn_category << @current_card.category
+        puts "Assigning category: #{@current_card.category}"
     end
-
-
 end
