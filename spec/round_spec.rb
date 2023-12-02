@@ -46,7 +46,7 @@ RSpec.describe Round do
         round = Round.new(deck)
         new_turn = round.take_turn("Juneau")
         
-        # expect(new_turn).to be_a(Turn)
+        expect(new_turn).to be_a(Turn)
         expect(round.turns).to eq([new_turn])
         expect(round.current_card).to eq(card_2)
     end

@@ -80,6 +80,5 @@ class Round
 
     def assign_turn_category
         @turn_category << @current_card.category
-        puts "Assigning category: #{@current_card.category}"
     end
 end
