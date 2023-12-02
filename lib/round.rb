@@ -80,5 +80,7 @@ class Round
 
     def assign_turn_category
         @turn_category << @current_card.category
+        @turn_category |= [@current_card.category]
+        # note to self: |= operator will only add @current_card.category to array if not present
     end
 end
