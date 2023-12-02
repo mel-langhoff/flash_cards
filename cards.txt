@@ -2,4 +2,5 @@ What is the capital of Alaska?,Juneau,Geography
 The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?,Mars,STEM
 Who wrote Harry Potter?,J.K. Rowling,Books
 What is the best show on televison?,Seinfeld,Common Knowledge
+What is the elevation of Denver?,5280,Geography
 What is 5 + 5?,10,Math
