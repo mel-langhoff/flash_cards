@@ -3,15 +3,16 @@ class CardGenerator
 
     def initialize(filename)
         @filename = filename
-        @cards_array = []
+        @cards_array = file_loader
     end
 
-    def cards
+    def file_loader
+        text_file_cards = []
         File.readlines(@filename, chomp: true).each do |line|
             question, answer, category = line.split(",")
             card = Card.new(question, answer, category)
-            @cards_array << card
+            text_file_cards << card
         end
-        @cards_array
+        text_file_cards
     end
 end
