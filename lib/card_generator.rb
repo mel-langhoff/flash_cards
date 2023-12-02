@@ -3,10 +3,10 @@ class CardGenerator
 
     def initialize(filename)
         @filename = filename
-        @cards_array = file_loader
+        @cards_array = cards
     end
 
-    def file_loader
+    def cards
         text_file_cards = []
         File.readlines(@filename, chomp: true).each do |line|
             question, answer, category = line.split(",")
