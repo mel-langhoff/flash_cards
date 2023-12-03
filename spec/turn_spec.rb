@@ -9,6 +9,20 @@ RSpec.describe Turn do
         expect(turn).to be_instance_of(Turn)
     end
 
+    it "has a card" do
+        card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+        turn1 = Turn.new("Juneau", card1)
+
+        expect(turn1.card).to eq(card1)
+    end
+
+    it "has a guess" do
+        card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+        turn1 = Turn.new("Juneau", card1)
+
+        expect(turn1.guess).to eq("Juneau")
+    end
+
     it "#correct?" do
         card1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
         turn1 = Turn.new("Juneau", card1)
