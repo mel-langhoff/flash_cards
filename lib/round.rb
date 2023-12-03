@@ -26,7 +26,7 @@ class Round
     end
 
     def number_correct
-        number_correct = @turns.count do |turn|
+        @turns.count do |turn|
             turn.correct?
         end
     end
@@ -46,19 +46,21 @@ class Round
         ((number_correct_by_category(category).to_f) / deck.cards_in_category(category).count.to_f) * 100
     end
 
+    #cannot test because of `puts`
     def start
-        puts "Welcome! You're playing with #{deck.cards.count} cards."
-        puts "-------------------------------------------------"
+            puts "Welcome! You're playing with #{deck.cards.count} cards."
+            puts "-------------------------------------------------"
         until turns.count == deck.cards.count
             play_card
         end
         final_score
     end
 
+    #cannot test due to user input
     def play_card
         @card_count += 1
         current_card_number = @card_count
-        @current_card = deck.cards.first
+        @current_card
         puts "This is card number #{current_card_number} out of #{deck.cards.count}."
         puts "Question: #{@current_card.question}"
         guess = gets.chomp
@@ -66,12 +68,14 @@ class Round
         puts @turns.last.feedback
     end
 
+    #cannot test because of `puts`
     def final_score
         puts "****** Game over! ******"
         puts "You had #{number_correct} correct guesses out of #{turns.count} for a total score of #{percent_correct}%."
         category_correct_list
     end
 
+    #cannot test because of `puts`
     def category_correct_list
         @turn_category.each do |category|
             puts "#{category} - #{percent_correct_by_category(category)}% correct"
