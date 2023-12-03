@@ -3,7 +3,4 @@ The Viking spacecraft sent back to Earth photographs and reports about the surfa
 Who wrote Harry Potter?,J.K. Rowling,Books
 What is the best show on televison?,Seinfeld,Common Knowledge
 What is the elevation of Denver?,5280,Geography
-What is the longest river in Egypt?,Nile,Geography
-What color is the sky?,Blue,Common Knowledge
-What day is Christmas?,December 25,Common Knowledge
 What is 5 + 5?,10,Math
